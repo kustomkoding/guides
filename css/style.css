@@ -26,24 +26,6 @@ li {
   margin: .5em 0;
 }
 
-code {
-  display: block;
-  overflow: auto;
-  white-space: nowrap;
-  padding: .5em;
-}
-
-code,
-kbd {
-  background: var(--bg-dark);
-  font-family: var(--font);
-}
-
-kbd {
-  padding: .25em;
-}
-
-
 cmd {
   color: #e91e63;
 }
@@ -56,12 +38,31 @@ arg {
   color: #009688;
 }
 
+code {
+  display: block;
+  overflow: auto;
+  white-space: nowrap;
+  padding: .5em;
+}
+
+kbd {
+  padding: .25em;
+}
+
+code,
+kbd {
+  background: var(--bg-dark);
+}
+
+code,
+kbd,
+body {
+  font-family: var(--font), monospace;
+}
 
 body {
-  margin: 0 1.25em;
   background: var(--bg-light);
   color: var(--fg-dark);
-  font-family: var(--font), monospace;
 }
 
 header,
