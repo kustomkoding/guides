@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Image Gallery</h1>
+    <h4>May 24, 2021</h4>
+  </header>
+  <article>
+    <section>
+      <h2>Kode</h2>
+      <p>For simplicity, the following global variables will be used:</p>
+      <ul>
+        <li><var>path</var></li>
+        <li><var>files</var></li>
+        <li><var>index</var></li>
+        <li><var>currFile</var></li>
+      </ul>
+    </section>
+    <section>
+      <h3><var>path</var></h3>
+      <p>The location of an existing directory on the internal storage, e.g., <kbd>/sdcard/DCIM/Camera</kbd>.</p>
+    </section>
+    <section>
+      <h3><var>files</var></h3>
+      <p>An expression which outputs the list of files in the given directory.</p>
+
+      <h4>Shell command</h4>
+      <code><cmd>ls</cmd> <flag>-p</flag> <arg>/path/to/dir</arg> | <cmd>grep</cmd> <flag>-vF</flag> <arg>/</arg></code>
+      <p>
+        The first part of the above command lists the contents of the given directory and suffixes each directory with <kbd>/</kbd>.
+        Then its output is piped to the second part which matches just the contents without <kbd>/</kbd>.
+      </p>
+
+      <h4>Kode expression</h4>
+      <code>$<cmd>sh</cmd>(<arg>"ls -p "</arg> + <arg>gv(path)</arg> | <arg>"grep -vF /"</arg>, <arg>1</arg>, <arg>1000</arg>)$</code>
+    </section>
+    <section>
+      <h3><var>index</var></h3>
+      <p>The positional index of a file in <var>files</var>. This is an integer which starts from 0.</p>
+    </section>
+    <section>
+      <h3><var>currFile</var></h3>
+      <p>The full path to a file indexed from <var>files</var>.</p>
+
+      <h4>Kode expression</h3>
+      <code>$<cmd>gv</cmd>(<arg>path</arg>)$/$<cmd>tc</cmd>(<arg>split</arg>, <arg>gv(files)</arg>, <arg>"<br>"</arg>,<arg>gv(index)</arg>)$</code>
+    </section>
+    <section>
+      <h2>References</h2>
+
+      <h4>Shell scripting</h4>
+      <ul>
+        <li><a href="https://man7.org/linux/man-pages/man1/ls.1.html" target="_blank">ls</a></li>
+        <li><a href="https://www.man7.org/linux/man-pages/man1/grep.1.html" target="_blank">grep</a></li>
+        <li><a href="https://en.m.wikipedia.org/wiki/Pipeline_(Unix)" target="_blank">| (pipe)</a></li>
+      </ul>
+
+      <h4>Kustom functions</h4>
+      <ul>
+        <li><a href="https://help.kustom.rocks/i2583-sh-shell-command-execute-a-command-in-the-underlying-shell" target="_blank">SH</a></li>
+        <li><a href="https://help.kustom.rocks/i2567-tc-text-converter-cut-text-make-it-lowercase-uppercase-capitalized-use-regular-expressions" target="_blank">TC</a></li>
+      </ul>
+    </section>
+  </article>
+  <footer>
+    <p>Copyright © 2021 AA16 Special Edition</p>
+  </footer>
+</body>
+</html>

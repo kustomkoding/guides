@@ -1,0 +1,81 @@
+:root {
+  --bg-light: #fff;
+  --bg-dark: #eee;
+  --fg-light: #636363;
+  --fg-dark: #212121;
+  --accent: #00bfa5;
+  --font: "Overpass Mono";
+}
+
+
+h4 {
+  color: var(--fg-light);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  box-shadow: 0 2px 0 var(--bg-dark);
+}
+
+a:hover {
+  box-shadow: 0 2px 0 var(--fg-light);
+}
+
+li {
+  margin: .5em 0;
+}
+
+code {
+  display: block;
+  overflow: auto;
+  white-space: nowrap;
+  padding: .5em;
+}
+
+code,
+kbd {
+  background: var(--bg-dark);
+  font-family: var(--font);
+}
+
+kbd {
+  padding: .25em;
+}
+
+
+cmd {
+  color: #e91e63;
+}
+
+flag {
+  color: #3f51b5;
+}
+
+arg {
+  color: #009688;
+}
+
+
+body {
+  margin: 0 1.25em;
+  background: var(--bg-light);
+  color: var(--fg-dark);
+  font-family: var(--font), monospace;
+}
+
+header,
+section,
+footer {
+  margin: 2.5em 0;
+}
+
+header > h1 {
+  color: var(--accent);
+  text-shadow: 0 2px 0 var(--bg-dark);
+}
+
+footer {
+  font-size: .9em;
+  text-align: center;
+}
