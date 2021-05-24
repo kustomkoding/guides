@@ -55,6 +55,7 @@ kbd {
 }
 
 body {
+  margin: 0 1.25em;
   background: var(--bg-light);
   color: var(--fg-dark);
   font-family: var(--font), monospace;
