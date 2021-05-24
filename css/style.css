@@ -7,7 +7,6 @@
   --font: "Overpass Mono";
 }
 
-
 h4 {
   color: var(--fg-light);
 }
@@ -52,17 +51,13 @@ kbd {
 code,
 kbd {
   background: var(--bg-dark);
-}
-
-code,
-kbd,
-body {
-  font-family: var(--font), monospace;
+  font-family: var(--font);
 }
 
 body {
   background: var(--bg-light);
   color: var(--fg-dark);
+  font-family: var(--font), monospace;
 }
 
 header,
